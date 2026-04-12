@@ -1,0 +1,398 @@
+/* 1A4122
+D8EFC4
+FBFAF9
+E8672F
+CB6129 
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=DM+Serif+Text:ital@0;1&family=Gideon+Roman&family=Lisu+Bosa:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+@import "tailwindcss";
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Fix Leaflet tile rendering */
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.leaflet-tile-container {
+  pointer-events: none;
+}
+
+.leaflet-tile {
+  max-width: none !important;
+  max-height: none !important;
+}
+
+.leaflet-pane {
+  z-index: 400;
+}
+
+.leaflet-tile-pane {
+  z-index: 200;
+}
+
+
+* {
+  font-family: 'Poppins', sans-serif;
+  --navbar-height: 130px;
+}
+
+.section {
+  /* or px-8 / whatever consistent spacing you want */
+  padding-bottom: 4rem;
+}
+
+.roboto-serif {
+  font-family: 'Roboto Serif', serif;
+}
+
+.gideon-roman {
+  font-family: Gideon Roman, serif;
+  letter-spacing: 3px;
+}
+
+
+
+
+.orange-bar {
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* Orange bar marquee: right → left */
+.marquee-track {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  animation: marquee-rtl 15s linear infinite;
+}
+
+@keyframes marquee-rtl {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-right: 2rem;
+}
+
+
+.section {
+  margin-bottom: 4rem;
+  /* 48px */
+}
+
+/* For smaller screens */
+@media (max-width: 640px) {
+  .section {
+    margin-bottom: 2rem;
+    /* 32px */
+  }
+}
+
+
+/* Wrapper to center the loader on screen */
+.loader-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+
+/* Reduced size loader - from 85px to 50px */
+.loader {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  animation: loading-rotate 3s linear infinite;
+}
+
+/* Reduced item size - from 40px to 23px */
+.loader .item {
+  width: 23px;
+  height: 23px;
+  display: block;
+  box-sizing: border-box;
+}
+
+/* Reduced border thickness - from 4px to 2px */
+.loader .item:nth-of-type(1) {
+  background-color: #50DE68;
+  border-radius: 12px 12px 0 12px;
+  border-left: #ffffff 2px solid;
+  border-top: #f7f7f7 2px solid;
+}
+
+.loader .item:nth-of-type(2) {
+  background-color: rgb(32, 80, 46);
+  border-radius: 12px 12px 12px 0;
+  border-right: #ffffff 2px solid;
+  border-top: #f7f7f7 2px solid;
+}
+
+.loader .item:nth-of-type(3) {
+  background-color: rgb(0, 255, 55);
+  border-radius: 12px 0 12px 12px;
+  border-left: #ffffff 2px solid;
+  border-bottom: #f7f7f7 2px solid;
+}
+
+.loader .item:nth-of-type(4) {
+  background-color: rgb(32, 182, 32);
+  border-radius: 0 12px 12px 12px;
+  border-right: #ffffff 2px solid;
+  border-bottom: #f7f7f7 2px solid;
+}
+
+@keyframes loading-rotate {
+  0% {
+    transform: rotate(0);
+  }
+
+  20% {
+    transform: rotate(72deg);
+  }
+
+  40% {
+    transform: rotate(144deg);
+  }
+
+  60% {
+    transform: rotate(216deg);
+  }
+
+  80% {
+    transform: rotate(288deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.loader-big {
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+
+.heading-3 {
+  font-family: 'Roboto Serif', serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 20px;
+  font: bold;
+}
+
+/* Base (laptop default) */
+.heading-4 {
+  font-family: 'Roboto Serif', serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 40px;
+  /* keep laptop size */
+  font: bold;
+  /* note: this overrides previous font settings; prefer font-weight if unintended */
+}
+
+/* Small screens (phones, small tablets) */
+@media (max-width: 640px) {
+  .heading-4 {
+    font-size: 28px;
+    /* scale down for small screens */
+    letter-spacing: 0.5px;
+    /* slightly tighter */
+  }
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .heading-4 {
+    font-size: 28px;
+    /* scale down for small screens */
+    letter-spacing: 0.5px;
+  }
+}
+
+/* Large desktop (leave as-is for typical laptops/desktops) */
+/* 1025px–1439px: no change (40px) */
+
+/* Very large screens (1440px+) */
+@media (min-width: 1440px) {
+  .heading-4 {
+    font-size: 40px;
+    /* gentle upscale on wide monitors */
+    letter-spacing: 1.25px;
+  }
+}
+
+/* Ultra-wide (optional) */
+@media (min-width: 1920px) {
+  .heading-4 {
+    font-size: 56px;
+    letter-spacing: 1.3px;
+  }
+}
+
+.text-body {
+  font-family: 'Roboto Serif', serif;
+  font-weight: 200;
+  letter-spacing: 1px;
+  font-size: 14px;
+  font: bold;
+}
+
+.heading-1 {
+  font-family: Gideon Roman, serif;
+  font-weight: 550;
+  letter-spacing: 3px;
+  font-style: bold;
+}
+
+/* Mobile - Small screens (up to 640px) */
+@media (max-width: 640px) {
+  .heading-1 {
+    font-size: 2.5rem;
+    /* 40px */
+    letter-spacing: 2px;
+  }
+}
+
+/* Tablet - Medium screens (641px to 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .heading-1 {
+    font-size: 3.5rem;
+    /* 56px */
+    letter-spacing: 2.5px;
+  }
+}
+
+/* Desktop - Large screens (1025px and above) */
+@media (min-width: 1025px) {
+  .heading-1 {
+    font-size: calc(2.375rem + 3.5vw);
+  }
+}
+
+.heading-2 {
+  font-family: Gideon Roman, serif;
+  font-weight: 550;
+  letter-spacing: 3px;
+  font-size: calc(0.225rem + 3.5vw);
+  font-style: bold;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.overlap-image {
+  transform: translateY(25%);
+}
+
+.section-wrapper {
+  padding-bottom: 6rem;
+}
+
+
+.heading-2 {
+  font-family: Gideon Roman, serif;
+  font-weight: 550;
+  letter-spacing: 3px;
+  font-size: calc(0.225rem + 3.5vw);
+  font-style: bold;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* Landing page CSS */
+@keyframes slideUpOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+}
+
+@keyframes slideUpIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up-out {
+  animation: slideUpOut 0.7s ease forwards;
+}
+
+.slide-up-in {
+  animation: slideUpIn 0.7s ease forwards;
+}
+
+.leaflet-container img {
+  max-width: none;
+}
+
+
+/* Shimmer effect */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 1.4s infinite;
+}
