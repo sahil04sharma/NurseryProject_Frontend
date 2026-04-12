@@ -2,12 +2,11 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 const backend = axios.create({
-  baseURL: import.meta.env.VITE_BACKEND_BASE_URL || "https://plantsproject-5dkq.onrender.com",
+  baseURL: import.meta.env.VITE_BACKEND_BASE_URL || "https://plantsproject-5dkq.onrender.com/api",
   timeout: 10000,
   headers: { "Content-Type": "application/json" },
   withCredentials: true,
 });
-
 // Cache system
 const cache = new Map();
 const DEFAULT_STALE_TIME = 30 * 1000; // 30 seconds
