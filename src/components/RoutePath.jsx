@@ -95,7 +95,7 @@ const RoutePath = () => {
         <Route path="/" element={<Layout />}>
           
           <Route
-          path="/sign-in"
+          path="sign-in"
           element={<RouteBoundary element={<SignIn />} />}
         />
           {/* HOME */}
