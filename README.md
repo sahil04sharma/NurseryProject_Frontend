@@ -59,8 +59,9 @@ src/
 <!-- Add your screenshots here -->
 ![HomePage](image-1.png)
 ![Product Page](image-2.png)
-![Cart](image-3.png)![Rview Product](image-4.png)
 ![AI Chatbot](image-5.png)
+![Cart](image-3.png)![Rview Product](image-4.png)
+
 
 ---
 
