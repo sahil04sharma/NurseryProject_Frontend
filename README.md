@@ -1,12 +1,64 @@
-# React + Vite
+# 🌿 AI-Powered Plant Nursery Platform (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern **full-stack MERN e-commerce platform** designed for buying plants with an intelligent AI assistant for plant care and recommendations.
 
-Currently, two official plugins are available:
+🔗 Live Demo: https://nursery-project-frontend.vercel.app  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🪴 User Features
+- Browse plants with categories & filters
+- View detailed plant information
+- Add to cart & wishlist
+- Place and track orders
+- AI chatbot for plant care guidance 🌿
+
+### 🤖 AI Assistant
+- Suggests plants based on user needs
+- Answers plant care queries
+- Provides real-time assistance using LLaMA 3.1 (via Groq API)
+
+### ⚡ Frontend Highlights
+- Skeleton loaders for smooth UX
+- Axios interceptors for API handling
+- Responsive UI using Tailwind CSS
+- Optimized state management
+
+### ⚡ Real-Time Features
+- WebSocket integration for live updates
+
+---
+
+## 🛠️ Tech Stack
+
+- React (Vite)
+- Tailwind CSS
+- Axios
+- WebSockets
+- Cloudinary (media handling)
+
+---
+
+## 📸 Screenshots
+
+<!-- Add your screenshots here -->
+![HomePage](image-1.png)
+![Product Page](image-2.png)
+![Cart](image-3.png)![Rview Product](image-4.png)
+![AI Chatbot](image-5.png)
+
+---
+
+## ⚙️ Setup Instructions
+
+```bash
+# Clone repo
+git clone https://github.com/sahil04sharma/NurseryProject_Frontend.git
+
+# Install dependencies
+npm install
+
+# Run project
+npm run dev
