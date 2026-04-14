@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import api from "../../network/backend";
+// import api from "../../network/backend";
 import { toast } from "react-toastify";
 import { useAuth } from "../../ContextApi/AuthContext";
 import LocationPicker from "./LocationPicker";
+import backend from "../../network/backend";
 
 const AddAddress = () => {
   const [formData, setFormData] = useState({
@@ -107,9 +108,9 @@ const AddAddress = () => {
     if (formData.lon) payload.append("lon", formData.lon);
     setLoading(true);
     try {
-      const { data } = await api.post("/user/address/add-address", payload);
+      const { data } = await backend.post("/user/address/add-address", payload);
       if (data.success) {
-        api.clearCache("/user/address/getmy-address");
+        backend.clearCache("/user/address/getmy-address");
         toast.success(data.message || "Address added successfully");
         navigate(-1);
       }
@@ -130,7 +131,7 @@ const AddAddress = () => {
     handleChange("postalCode", pin);
     if (pin.length !== 6) return;
     try {
-      const { data } = await api.get(`/user/address/pincode/${pin}`);
+      const { data } = await backend.get(`/user/address/pincode/${pin}`);
       if (data.city && data.state) {
         handleChange("city", data.city);
         handleChange("state", data.state);
@@ -169,7 +170,7 @@ const AddAddress = () => {
           return;
         }
         try {
-          const res = await api.get(
+          const res = await backend.get(
             `/user/address/reverse-geocode?lat=${latitude}&lon=${longitude}`
           );
           handleChange("lat", latitude);
