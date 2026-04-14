@@ -31,6 +31,19 @@ A modern **full-stack MERN e-commerce platform** designed for buying plants with
 
 ---
 
+## 📁 Folder Structure
+
+src/
+ ┣ components/
+ ┣ Context_Api/
+ ┣ helper/
+ ┣ pages/
+ ┣ hooks/
+ ┣ network/ ## for interceptor
+ ┣ utils/
+ ┣ services/ (API calls)
+ ┗ App.jsx
+
 ## 🛠️ Tech Stack
 
 - React (Vite)
