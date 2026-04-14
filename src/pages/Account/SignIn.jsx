@@ -24,7 +24,7 @@ export default function SignIn() {
   const handleOnChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
-
+console.log(import.meta.env.VITE_GOOGLE_CLIENT_ID);
   // Google login
   const responseGoogle = async (authResponse) => {
     setLoading(true);

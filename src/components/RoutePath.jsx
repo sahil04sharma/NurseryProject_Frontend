@@ -84,20 +84,15 @@ const RoutePath = () => {
           path="/reset-password"
           element={<RouteBoundary element={<ResetPassword />} />}
         />
-        {/* <Route
+        <Route
           path="/sign-in"
           element={<RouteBoundary element={<SignIn />} />}
-        /> */}
+        />
 
         <Route path="/plant-detail/:id" element={<ProductDetailByQR />} />
 
         {/* ---------- MAIN LAYOUT ---------- */}
         <Route path="/" element={<Layout />}>
-          
-          <Route
-          path="sign-in"
-          element={<RouteBoundary element={<SignIn />} />}
-        />
           {/* HOME */}
           <Route index element={<RouteBoundary element={<HomePage />} />} />
 

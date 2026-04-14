@@ -3,6 +3,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../nav/Navbar";
 const Footer = lazy(() => import("./Footer"));
 import WhatsAppButton from "../WhatsAppButton";
+import PlantChatWidget from "../Ai chat/PlantChatWidget";
 import Loader from "../Loader/Loader";
 
 export default function Layout() {
@@ -39,8 +40,10 @@ export default function Layout() {
           </footer>
         </Suspense>
 
-        {/* WhatsApp floating btn */}
-        <WhatsAppButton isHome={isHome} />
+        <PlantChatWidget/>
+
+        {/* WhatsApp floating btn
+        <WhatsAppButton isHome={isHome} /> */}
 
         {/* Loader overlay*/}
         {isLoading && (
